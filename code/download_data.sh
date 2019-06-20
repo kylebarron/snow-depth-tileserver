@@ -12,6 +12,28 @@ URL=ftp://sidads.colorado.edu/DATASETS/NOAA/G02158/masked/$YEAR/${MONTH_NUM}_${M
 # Download file from FTP server
 wget $URL
 
+# If file was not found, use yesterday's date
+rc=$?
+if [[ $rc != 0 ]]; then
+
+  YEAR=$(date +%Y --date='yesterday')
+  MONTH_NUM=$(date +%m --date='yesterday')
+  MONTH_SHORT=$(date +%b --date='yesterday')
+  DATE_DIGITS=$(date +%Y%m%d --date='yesterday')
+
+  # Create URL
+  URL=ftp://sidads.colorado.edu/DATASETS/NOAA/G02158/masked/$YEAR/${MONTH_NUM}_${MONTH_SHORT}/SNODAS_${DATE_DIGITS}.tar
+
+  # Download file from FTP server
+  wget $URL
+
+  # If yesterday's data not found, exit
+  rc=$?; if [[ $rc != 0 ]]; then
+    echo "Yesterday's SNODAS data not found"
+    exit $rc
+  fi
+fi
+
 # Saved as SNODAS_YYYYMMDD.tar
 # Extract from tarball
 tar xvf SNODAS_${DATE_DIGITS}.tar
