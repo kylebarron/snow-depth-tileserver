@@ -45,19 +45,12 @@ rm SNODAS_${DATE_DIGITS}.tar
 SWE_FILE=us_ssmv11034tS__T0001TTNATS${DATE_DIGITS}*HP001
 SD_FILE=us_ssmv11036tS__T0001TTNATS${DATE_DIGITS}*HP001
 
-# Uncomment if I want to keep snow-water equivalent
-# mv -f $SWE_FILE.dat.gz swe.dat.gz
-# mv -f $SWE_FILE.Hdr.gz swe.Hdr.gz
-mv -f $SD_FILE.dat.gz snow_depth.dat.gz
-mv -f $SD_FILE.Hdr.gz snow_depth.Hdr.gz
+# Extract files of interest
+gunzip $SD_FILE.dat.gz
+gunzip $SD_FILE.Hdr.gz
+
+mv -f $SD_FILE.dat ../data/
+mv -f $SD_FILE.Hdr ../data/
 
 # Delete other files
 rm us_ssmv*.gz
-
-# Extract files of interest
-gunzip snow_depth.dat.gz
-gunzip snow_depth.Hdr.gz
-
-# Move to data folder
-mv snow_depth.dat ../data/
-mv snow_depth.Hdr ../data/
