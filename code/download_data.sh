@@ -49,6 +49,7 @@ SD_FILE=us_ssmv11036tS__T0001TTNATS${DATE_DIGITS}*HP001
 gunzip $SD_FILE.dat.gz
 gunzip $SD_FILE.Hdr.gz
 
+mkdir -p ../data/
 mv -f $SD_FILE.dat ../data/
 mv -f $SD_FILE.Hdr ../data/
 
