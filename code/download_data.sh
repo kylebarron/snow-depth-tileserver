@@ -57,6 +57,6 @@ mv -f $SD_FILE.Hdr ../data/
 rm us_ssmv*.gz
 
 # Create MBTiles from SNODAS Snow Depth
-gdaldem color-relief ../data/$SD_FILE.Hdr colors.txt ../data/snow_depth.tiff -of GTiff
+gdaldem color-relief ../data/$SD_FILE.Hdr colors.txt ../data/snow_depth.tiff -of GTiff -alpha
 gdal_translate ../data/snow_depth.tiff ../data/snow_depth.mbtiles
 gdaladdo -r average ../data/snow_depth.mbtiles
