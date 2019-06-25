@@ -60,3 +60,10 @@ rm us_ssmv*.gz
 gdaldem color-relief ../data/$SD_FILE.Hdr colors.txt ../data/snow_depth.tiff -of GTiff -alpha
 gdal_translate ../data/snow_depth.tiff ../data/snow_depth.mbtiles
 gdaladdo -r average ../data/snow_depth.mbtiles
+
+# Restart docker
+# (This restarts all docker containers)
+docker restart $(docker ps -q)
+
+# Delete all files except the mbtiles
+find ../data/ ! -name 'snow_depth.mbtiles' -type f -exec rm -f {} +
