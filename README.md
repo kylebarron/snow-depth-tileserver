@@ -20,14 +20,14 @@ The legend is the [same as NOAA's](https://idpgis.ncep.noaa.gov/arcgis/rest/serv
 - ![color](assets/10.svg) 1-5cm (0.4-2.0in)
 - ![color](assets/50.svg) 5-10cm (2.0-3.9in)
 - ![color](assets/100.svg) 10-25cm (3.9-9.8in)
-- ![color](assets/250.svg) 25-50cm (9.8-19.7in)
-- ![color](assets/500.svg) 50-100cm (19.7-39.4in)
-- ![color](assets/1000.svg) 100-150cm (39.4-59.1in)
-- ![color](assets/1500.svg) 150-250cm (59.1-98.4in)
-- ![color](assets/2500.svg) 250-500cm (98.4-196.9in)
-- ![color](assets/5000.svg) 500-750cm (196.9-295.3in)
-- ![color](assets/7500.svg) 750-1000cm (295.3-393.7in)
-- ![color](assets/10000.svg) 1000+cm (393.7+in)
+- ![color](assets/250.svg) 25-50cm (9.8-20in)
+- ![color](assets/500.svg) 50-100cm (20-39in)
+- ![color](assets/1000.svg) 100-150cm (39-59in)
+- ![color](assets/1500.svg) 150-250cm (59-98in)
+- ![color](assets/2500.svg) 250-500cm (98-197in)
+- ![color](assets/5000.svg) 500-750cm (197-295in)
+- ![color](assets/7500.svg) 750-1000cm (295-394in)
+- ![color](assets/10000.svg) 1000+cm (394+in)
 
 ## Technical details
 
