@@ -1,2 +1,3 @@
 #! /usr/bin/env bash
-docker run -d --rm -it -v $(pwd):/data -p 8080:80 klokantech/tileserver-gl --mbtiles ../data/snow_depth.mbtiles --verbose
+cd ../data/
+docker run -d --rm -it -v $(pwd):/data -p 8080:80 klokantech/tileserver-gl --mbtiles snow_depth.mbtiles --verbose
