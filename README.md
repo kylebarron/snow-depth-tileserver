@@ -14,7 +14,7 @@ This map layer uses [NOAA's snow depth data](https://nsidc.org/data/g02158), and
 
 ## Map Legend
 
-The legend is the same as NOAA's:
+The legend is the [same as NOAA's](https://idpgis.ncep.noaa.gov/arcgis/rest/services/NWS_Observations/NOHRSC_Snow_Analysis/MapServer/legend):
 
 - ![color](assets/0.svg) 0-1cm (0-0.4in)
 - ![color](assets/10.svg) 1-5cm (0.4-2.0in)
