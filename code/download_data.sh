@@ -35,7 +35,7 @@ popd
 mkdir -p build
 # Create MBTiles from SNODAS Snow Depth
 gdaldem color-relief data/$SD_FILE.Hdr colors.txt build/snow_depth.tiff -of GTiff -alpha
-gdal_translate build/snow_depth.tiff build/snow_depth.mbtiles
+gdal_translate build/snow_depth.tiff build/snow_depth.mbtiles -co ZOOM_LEVEL_STRATEGY=upper
 gdaladdo -r average build/snow_depth.mbtiles
 
 if [[ -v "S3_URL" ]]; then
