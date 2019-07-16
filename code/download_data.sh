@@ -47,17 +47,17 @@ SD_FILE=us_ssmv11036tS__T0001TTNATS${DATE_DIGITS}*HP001
 
 # Extract files of interest
 gunzip $SD_FILE.dat.gz
-gunzip $SD_FILE.Hdr.gz
+gunzip $SD_FILE.txt.gz
 
 mkdir -p ../data/
 mv -f $SD_FILE.dat ../data/
-mv -f $SD_FILE.Hdr ../data/
+mv -f $SD_FILE.txt ../data/
 
 # Delete other files
 rm us_ssmv*.gz
 
 # Create MBTiles from SNODAS Snow Depth
-gdaldem color-relief ../data/$SD_FILE.Hdr colors.txt ../data/snow_depth.tiff -of GTiff -alpha
+gdaldem color-relief ../data/$SD_FILE.txt colors.txt ../data/snow_depth.tiff -of GTiff -alpha
 gdal_translate ../data/snow_depth.tiff ../data/snow_depth.mbtiles
 gdaladdo -r average ../data/snow_depth.mbtiles
 
