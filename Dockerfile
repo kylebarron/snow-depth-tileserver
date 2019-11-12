@@ -20,4 +20,4 @@ RUN cd /opt && \
 ADD code /opt/snowdepth/
 
 ENV LC_ALL=C.UTF-8
-CMD ["/bin/bash","-c","cd /opt/snowdepth/ && ./download_data.sh || curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"Snow build failed\"}' $SLACK_WEBHOOK"]
+CMD ["/bin/bash","-c","cd /opt/snowdepth/ && ./download_data.sh || curl -X POST -H 'Content-type: application/json' --data '{\"text\":\"Snow depth build failed\"}' $SLACK_WEBHOOK"]
