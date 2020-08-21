@@ -3,8 +3,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 #install prerequisites
 RUN apt-get -q update && \
-    apt-get -q -y install software-properties-common git python3.6 python3-pip \
-    build-essential unzip libsqlite3-dev zlib1g-dev wget curl && \
+    apt-get -q -y install awscli software-properties-common git python3.6 \
+    python3-pip build-essential unzip libsqlite3-dev zlib1g-dev wget curl && \
     add-apt-repository ppa:ubuntugis/ppa && \
     apt-get update && \
     apt-get -q -y install gdal-bin gdal-data && \

@@ -39,8 +39,14 @@ gdal_translate build/snow_depth.tiff build/snow_depth.mbtiles -co ZOOM_LEVEL_STR
 gdaladdo -r average build/snow_depth.mbtiles
 
 if [[ -v "S3_URL" ]]; then
+  aws s3 rm --recursive s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/
   python3 /opt/Processing/upload_mbtiles.py --threads 100 \
       --extension ".png" \
       --header "Cache-Control:max-age=21600" \
-      build/snow_depth.mbtiles $S3_URL
+      build/snow_depth.mbtiles s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/
+  aws s3 sync \
+      --delete
+      s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/
+      $S3_URL
+  aws s3 rm --recursive s3://vectortiles-dev.gaiagps.com/us-snow-depth-raster/
 fi
